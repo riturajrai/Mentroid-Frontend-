@@ -1,6 +1,7 @@
 "use client";
 
 import { BookOpen, Brain, Sparkles, TrendingUp } from "lucide-react";
+import { Card } from "@/components/ui/card";
 
 export default function HowItWorks() {
   const steps = [
@@ -39,11 +40,11 @@ export default function HowItWorks() {
         </h2>
 
         {/* Steps */}
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-6 md:gap-8">
           {steps.map((step, i) => (
-            <div
+            <Card
               key={i}
-              className="flex items-start gap-6 hover:translate-x-1 transition-transform"
+              className="flex items-start gap-6 p-6 md:p-8 hover:shadow-lg transition-shadow"
             >
               {/* Number Circle */}
               <div className="flex items-center justify-center w-12 h-12 rounded-full bg-[var(--color-primary)] text-white font-semibold text-lg shrink-0">
@@ -51,8 +52,8 @@ export default function HowItWorks() {
               </div>
 
               {/* Text + Icon */}
-              <div>
-                <div className="flex items-center gap-2 mb-1">
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-2">
                   {step.icon}
                   <h3 className="text-lg md:text-xl font-semibold text-zinc-900 dark:text-white">
                     {step.title}
@@ -62,7 +63,7 @@ export default function HowItWorks() {
                   {step.desc}
                 </p>
               </div>
-            </div>
+            </Card>
           ))}
         </div>
       </div>

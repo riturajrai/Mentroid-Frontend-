@@ -13,6 +13,7 @@ import {
   MapPin,
   ArrowRight,
 } from "lucide-react";
+import { Card } from "@/components/ui/card";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -40,21 +41,16 @@ export default function Footer() {
   return (
     <footer className="bg-[var(--color-primary)] text-white mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-
         {/* GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-
           {/* BRAND */}
           <div className="space-y-5">
             <h2 className="text-2xl font-bold flex items-center gap-2">
               <span className="text-white">Mentoroid</span>AI
             </h2>
-
             <p className="text-white/90 text-sm leading-relaxed max-w-xs">
-              India&apos;s first bilingual AI mentor that adapts to your child —
-              learn in English or Hindi with personalised micro-learning.
+              India&apos;s first bilingual AI mentor that adapts to your child — learn in English or Hindi with personalised micro-learning.
             </p>
-
             {/* SOCIAL ICONS */}
             <div className="flex gap-4">
               {[Facebook, Instagram, Twitter, Youtube, Linkedin].map((Icon, i) => (
@@ -106,22 +102,19 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* CONTACT + LEGAL */}
-          <div className="space-y-8">
-            <div>
-              <h3 className="font-semibold text-white text-lg mb-4">Get in Touch</h3>
-
+          {/* CONTACT + LEGAL in Card */}
+          <Card className="bg-white/10 backdrop-blur-md border border-white/20 p-6 flex flex-col justify-between h-full">
+            <div className="space-y-5">
+              <h3 className="font-semibold text-white text-lg">Get in Touch</h3>
               <div className="space-y-3 text-sm">
                 <div className="flex items-center gap-3">
                   <Mail className="w-4 h-4 text-white" />
                   <span className="text-white/90">support@mentoroidai.com</span>
                 </div>
-
                 <div className="flex items-center gap-3">
                   <Phone className="w-4 h-4 text-white" />
                   <span className="text-white/90">+91-9876543210</span>
                 </div>
-
                 <div className="flex items-center gap-3">
                   <MapPin className="w-4 h-4 text-white" />
                   <span className="text-white/90">Bengaluru, India</span>
@@ -129,8 +122,7 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* LEGAL */}
-            <div>
+            <div className="mt-6">
               <h4 className="font-medium text-white text-sm mb-3">Legal</h4>
               <div className="flex flex-wrap gap-4 text-xs text-white/80">
                 {links.legal.map((item) => (
@@ -144,13 +136,12 @@ export default function Footer() {
                 ))}
               </div>
             </div>
-          </div>
+          </Card>
         </div>
 
         {/* BOTTOM BAR */}
         <div className="border-t border-white/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-white/70">
           <p>&copy; {currentYear} MentoroidAI. All rights reserved.</p>
-
           <p className="mt-4 md:mt-0">
             Made with <span className="text-red-400">❤</span> for Indian Students
           </p>

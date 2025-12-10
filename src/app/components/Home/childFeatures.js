@@ -1,5 +1,7 @@
 "use client";
 
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
 import { Activity, Compass, BookOpen, FileText, Users, GraduationCap } from "lucide-react";
 
 export default function ChildFeatures() {
@@ -9,12 +11,14 @@ export default function ChildFeatures() {
       icon: <Activity className="w-6 h-6 text-primary" />,
       title: "AI Homework Helper",
       description: "Step-by-step hints that build understanding, not copying.",
-    },{
+    },
+    {
       id: 2,
       icon: <Compass className="w-6 h-6 text-primary" />,
       title: "Chanakya Mode",
       description: "AI that asks guiding questions to build reasoning.",
-    },{
+    },
+    {
       id: 3,
       icon: <BookOpen className="w-6 h-6 text-primary" />,
       title: "English Lab",
@@ -39,6 +43,7 @@ export default function ChildFeatures() {
       description: "Homework generators, quizzes, worksheets, class heatmaps.",
     },
   ];
+
   return (
     <section className="bg-gray-50 py-20 px-6 md:px-12">
       <div className="max-w-6xl mx-auto text-center mb-12">
@@ -46,18 +51,21 @@ export default function ChildFeatures() {
           What Your Child Gets
         </h2>
       </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {features.map((feature) => (
-          <div
+          <Card
             key={feature.id}
-            className="bg-white border border-gray-200 rounded-xl p-6 text-left shadow-sm hover:shadow-lg transition-all duration-300"
+            className="rounded-xl shadow-sm hover:shadow-lg border border-gray-200 transition-all duration-300"
           >
-            <div className="flex items-center mb-4 gap-3">
-              {feature.icon}
-              <h3 className="text-lg font-semibold text-primary">{feature.title}</h3>
-            </div>
-            <p className="text-gray-600 text-sm md:text-base">{feature.description}</p>
-          </div>
+            <CardContent className="flex flex-col text-left p-6 space-y-4">
+              <div className="flex items-center gap-3">
+                {feature.icon}
+                <h3 className="text-lg font-semibold text-primary">{feature.title}</h3>
+              </div>
+              <p className="text-gray-600 text-sm md:text-base">{feature.description}</p>
+            </CardContent>
+          </Card>
         ))}
       </div>
     </section>

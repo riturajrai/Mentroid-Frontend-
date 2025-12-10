@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
 import { Target, Gamepad2, Lightbulb } from "lucide-react";
 
 export default function WhyMentoroidWorks() {
@@ -42,27 +43,29 @@ export default function WhyMentoroidWorks() {
         {/* Features Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {features.map((item) => (
-            <div
+            <Card
               key={item.id}
-              className="group bg-white border border-[var(--color-primary)]/20 rounded-2xl p-5 sm:p-6 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+              className="group rounded-2xl border border-[var(--color-primary)]/20 p-5 sm:p-6 shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
             >
-              {/* Icon container */}
-              <div className="mb-4 p-3 w-fit rounded-lg bg-[var(--color-primary)]/10 group-hover:scale-110 transition-transform">
-                {React.cloneElement(item.icon, {
-                  className: "w-7 h-7 text-[var(--color-primary)]",
-                })}
-              </div>
+              <CardContent className="flex flex-col items-center text-center space-y-4 p-0">
+                {/* Icon */}
+                <div className="mb-4 p-3 w-fit rounded-lg bg-[var(--color-primary)]/10 group-hover:scale-110 transition-transform">
+                  {React.cloneElement(item.icon, {
+                    className: "w-7 h-7 text-[var(--color-primary)]",
+                  })}
+                </div>
 
-              {/* Title */}
-              <h3 className="text-lg sm:text-xl font-bold mb-2 text-[#123358] group-hover:text-[var(--color-primary)] transition-colors">
-                {item.title}
-              </h3>
+                {/* Title */}
+                <h3 className="text-lg sm:text-xl font-bold text-[#123358] group-hover:text-[var(--color-primary)] transition-colors">
+                  {item.title}
+                </h3>
 
-              {/* Description */}
-              <p className="text-gray-600 text-[10px] sm:text-sm md:text-base leading-relaxed">
-                {item.desc}
-              </p>
-            </div>
+                {/* Description */}
+                <p className="text-gray-600 text-[10px] sm:text-sm md:text-base leading-relaxed">
+                  {item.desc}
+                </p>
+              </CardContent>
+            </Card>
           ))}
         </div>
 

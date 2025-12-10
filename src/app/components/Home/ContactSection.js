@@ -1,21 +1,25 @@
 "use client";
 
+import React from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
 
 export default function ContactSection() {
   return (
     <section className="bg-[#F9FAFB] py-20 px-6 md:px-16 lg:px-24">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
-        
+
         {/* Left Side - Contact Info */}
         <div>
           <h2 className="text-4xl font-extrabold text-gray-900 mb-4">Get In Touch</h2>
           <p className="text-gray-600 mb-8 text-lg">
-            Have questions? We'd love to hear from you. Send us a message and
-            we'll respond as soon as possible.
+            Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
           </p>
+
           <div className="space-y-6">
-            
             {/* Email */}
             <div className="flex items-start gap-4">
               <div className="bg-[var(--color-primary)]/10 p-3 rounded-xl">
@@ -52,54 +56,43 @@ export default function ContactSection() {
         </div>
 
         {/* Right Side - Contact Form */}
-        <div className="bg-white rounded-2xl shadow-md p-8">
+        <Card className="p-8 shadow-md rounded-2xl bg-white">
           <form className="space-y-5">
-            
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1">Name</label>
-              <input
-                type="text"
-                placeholder="Your name"
-                className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
-              />
-            </div>
 
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1">Email</label>
-              <input
-                type="email"
-                placeholder="your@email.com"
-                className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
-              />
-            </div>
+            <Input
+              type="text"
+              placeholder="Your name"
+              className="text-gray-900"
+            />
 
+            <Input
+              type="email"
+              placeholder="Enter Your Email"
+              className="text-gray-900"
+            />
+
+            {/* Native Select */}
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1">I am a...</label>
-              <select className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]">
-                <option>Student</option>
-                <option>Parent</option>
-                <option>Teacher</option>
-                <option>Other</option>
+              <select className="w-full border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]">
+                <option value="" disabled selected>I am a...</option>
+                <option value="Student">Student</option>
+                <option value="Parent">Parent</option>
+                <option value="Teacher">Teacher</option>
+                <option value="Other">Other</option>
               </select>
             </div>
 
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1">Message</label>
-              <textarea
-                placeholder="Tell us how we can help..."
-                rows="4"
-                className="w-full border border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
-              ></textarea>
-            </div>
+            <Textarea
+              placeholder="Tell us how we can help..."
+              rows={4}
+              className="text-gray-900"
+            />
 
-            <button
-              type="submit"
-              className="w-full bg-[color:var(--color-primary)]  text-white font-semibold py-3 rounded-lg hover:bg-gray-900 transition-all duration-300"
-            >
+            <Button className="w-full bg-[var(--color-primary)] text-white hover:bg-gray-900">
               Send Message
-            </button>
+            </Button>
           </form>
-        </div>
+        </Card>
       </div>
     </section>
   );

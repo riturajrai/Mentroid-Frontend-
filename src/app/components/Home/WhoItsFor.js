@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
 import { GraduationCap, Presentation, Building2, Heart } from "lucide-react";
 
 export default function WhoItsFor() {
@@ -43,30 +44,30 @@ export default function WhoItsFor() {
           Who <span className="text-[var(--color-primary)]">It’s For</span>
         </h2>
 
-        {/* Cards */}
+        {/* Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {cards.map((card, index) => (
-            <div
+            <Card
               key={index}
-              className={`rounded-2xl bg-white dark:bg-zinc-900 border ${card.border} p-6 flex flex-col items-start text-left hover:shadow-lg hover:-translate-y-1 transition-all duration-300`}
+              className={`rounded-2xl border ${card.border} p-6 flex flex-col items-start text-left hover:shadow-lg hover:-translate-y-1 transition-all duration-300`}
             >
-              {/* Icon */}
-              <div
-                className={`p-3 rounded-xl mb-4 flex items-center justify-center ${card.bg}`}
-              >
-                {card.icon}
-              </div>
+              <CardContent className="flex flex-col items-start space-y-4 p-0">
+                {/* Icon */}
+                <div className={`p-3 rounded-xl mb-2 flex items-center justify-center ${card.bg}`}>
+                  {card.icon}
+                </div>
 
-              {/* Title */}
-              <h3 className="font-semibold text-lg text-zinc-900 dark:text-white mb-2">
-                {card.title}
-              </h3>
+                {/* Title */}
+                <h3 className="font-semibold text-lg text-zinc-900 dark:text-white">
+                  {card.title}
+                </h3>
 
-              {/* Description */}
-              <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
-                {card.desc}
-              </p>
-            </div>
+                {/* Description */}
+                <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
+                  {card.desc}
+                </p>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>

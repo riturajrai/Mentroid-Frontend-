@@ -3,6 +3,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { AuthProvider } from "./providers/AuthProvider";
 import LayoutContent from "./components/LayoutContent.js";
+import ChakraClientProvider from "./components/ChakraProvider";
 
 const inter = Inter({
   subsets: ["latin"],

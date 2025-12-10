@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   BookOpenCheck,
   FlaskConical,
@@ -57,49 +58,26 @@ export default function LearningUnderstandsYou() {
         <h2 className="text-xl sm:text-2xl md:text-4xl font-extrabold text-[#123358] mb-3">
           Learning That Understands You
         </h2>
-
         <p className="text-[10px] sm:text-sm text-gray-600">
           Personalized solutions for every learner.
         </p>
       </div>
 
-      {/* Cards Section */}
-      <div
-        className="
-        grid 
-        grid-cols-1 
-        sm:grid-cols-2 
-        lg:grid-cols-3 
-        gap-6 
-        max-w-6xl 
-        mx-auto
-      "
-      >
+      {/* Cards Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
         {features.map((item) => (
-          <div
+          <Card
             key={item.id}
-            className="
-            bg-white/80 
-            rounded-2xl 
-            border 
-            border-gray-200 
-            shadow-sm 
-            hover:shadow-xl 
-            transition-all 
-            hover:-translate-y-1 
-            duration-300 
-            p-6 
-            backdrop-blur-md
-          "
+            className="bg-white/80 rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 backdrop-blur-md"
           >
-            <div className="flex flex-col items-center text-center">
+            <CardContent className="flex flex-col items-center text-center space-y-4 p-6">
               {/* Icon */}
-              <div className="mb-4 flex items-center justify-center w-16 h-16 rounded-full bg-[var(--color-primary)]/10">
+              <div className="flex items-center justify-center w-16 h-16 rounded-full bg-[var(--color-primary)]/10 mb-2">
                 {item.icon}
               </div>
 
               {/* Title */}
-              <h3 className="font-semibold text-[12px] sm:text-sm md:text-base text-[#123358] mb-2">
+              <h3 className="font-semibold text-[12px] sm:text-sm md:text-base text-[#123358]">
                 {item.title}
               </h3>
 
@@ -107,8 +85,8 @@ export default function LearningUnderstandsYou() {
               <p className="text-[10px] sm:text-xs text-gray-600 leading-relaxed">
                 {item.desc}
               </p>
-            </div>
-          </div>
+            </CardContent>
+          </Card>
         ))}
       </div>
     </section>

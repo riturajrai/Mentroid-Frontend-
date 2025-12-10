@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export default function FAQSection() {
   const faqs = [
@@ -50,11 +52,9 @@ export default function FAQSection() {
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div 
-              key={index} 
-              className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200"
-            >
-              <button
+            <Card key={index} className="overflow-hidden border border-gray-200">
+              <Button
+                variant="ghost"
                 className="w-full flex justify-between items-center p-4 text-left text-gray-800 font-medium hover:bg-gray-100 transition"
                 onClick={() => toggleFAQ(index)}
               >
@@ -64,13 +64,14 @@ export default function FAQSection() {
                 ) : (
                   <Plus className="w-5 h-5 text-[var(--color-primary)]" />
                 )}
-              </button>
+              </Button>
+
               {openIndex === index && (
                 <div className="px-4 pb-4 text-gray-600 text-sm md:text-base">
                   {faq.answer}
                 </div>
               )}
-            </div>
+            </Card>
           ))}
         </div>
       </div>

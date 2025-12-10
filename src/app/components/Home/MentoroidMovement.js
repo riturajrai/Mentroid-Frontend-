@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
 import { Brain, Building2, TrendingUp, Globe2 } from "lucide-react";
 
 export default function MentoroidMovement() {
@@ -45,9 +46,7 @@ export default function MentoroidMovement() {
   return (
     <section
       ref={sectionRef}
-      className="w-full
-        bg-[color:var(--color-primary)]
-        py-20 px-6 md:px-12 text-center"
+      className="w-full bg-[color:var(--color-primary)] py-20 px-6 md:px-12 text-center"
     >
       <div className="max-w-5xl mx-auto">
 
@@ -60,23 +59,28 @@ export default function MentoroidMovement() {
           Building India’s AI-Powered Learning Future — Launching January 2025.
         </p>
 
-        {/* Stats */}
+        {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           {stats.map((item) => (
-            <div key={item.id} className="flex flex-col items-center">
-              
-              {/* Animated Number */}
-              <AnimatedNumber
-                target={item.number}
-                isVisible={isVisible}
-                suffix={item.id === 1 ? "+" : item.id === 2 ? "+" : item.id === 3 ? "%" : ""}
-              />
+            <Card
+              key={item.id}
+              className="flex flex-col items-center justify-center rounded-2xl bg-[var(--color-primary)]/80 shadow-lg border border-white/20 p-6 transition-all duration-300 hover:scale-105"
+            >
+              <CardContent className="flex flex-col items-center text-center p-4 space-y-4">
+                {/* Animated Number */}
+                <AnimatedNumber
+                  target={item.number}
+                  isVisible={isVisible}
+                  suffix={item.id === 1 ? "+" : item.id === 2 ? "+" : item.id === 3 ? "%" : ""}
+                />
 
-              <div className="flex items-center gap-2 text-white mt-2">
-                {item.icon}
-                <p className="text-lg">{item.label}</p>
-              </div>
-            </div>
+                {/* Label with Icon */}
+                <div className="flex items-center gap-2 text-white mt-2">
+                  {item.icon}
+                  <p className="text-lg font-semibold">{item.label}</p>
+                </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
 
@@ -127,4 +131,4 @@ function AnimatedNumber({ target, isVisible, suffix = "" }) {
       {suffix}
     </p>
   );
-};
+}

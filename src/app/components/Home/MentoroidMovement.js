@@ -46,10 +46,7 @@ export default function MentoroidMovement() {
     <section
       ref={sectionRef}
       className="w-full
-        bg-gradient-to-r
-        from-[#1E466D]
-        via-[#245F59]
-        to-[#2F6E49]
+        bg-[color:var(--color-primary)]
         py-20 px-6 md:px-12 text-center"
     >
       <div className="max-w-5xl mx-auto">

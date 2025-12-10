@@ -177,7 +177,6 @@ const FeaturesSection = () => {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

@@ -29,15 +29,7 @@ export default function StakeholdersSection() {
 
   return (
     <section
-      className="
-        w-full
-        bg-gradient-to-r
-        from-[#1E466D]
-        via-[#245F59]
-        to-[#2F6E49]
-        py-20 px-6 md:px-12 text-center
-      "
-    >
+      className="w-full bg-[color:var(--color-primary)]   py-20 px-6 md:px-12 text-center">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-5 leading-tight">
           One Platform. Total Clarity.

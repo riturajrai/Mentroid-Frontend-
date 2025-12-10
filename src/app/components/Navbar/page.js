@@ -30,36 +30,47 @@ export default function Navbar() {
   return (
     <nav
       className="
-    bg-gradient-to-r
-    from-[color:var(--color-primary)]
-    via-[#335F52]
-    to-[#0F4D2A]
-    border-b border-gray-200 shadow-sm sticky top-0 z-50
-  ">
+        bg-[color:var(--color-primary)]
+        border-b border-gray-200 shadow-md sticky top-0 z-50
+      "
+    >
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
+
+          {/* ------- PROFESSIONAL LOGO BOX ------- */}
           <Link
             href={user ? "/dashboard" : "/"}
             className="flex items-center gap-3"
           >
-            <Image
-              src={logo}
-              alt="Mentoroid Logo"
-              width={60}
-              height={10}
-              className="object-contain"
-            />
+            <div
+              className="
+                bg-white 
+                p-2 
+                rounded-2xl 
+                shadow-lg 
+                flex 
+                items-center 
+                justify-center
+              "
+            >
+              <Image
+                src={logo}
+                alt="Mentoroid Logo"
+                width={20}
+                height={30}
+                className="object-contain"
+              />
+            </div>
           </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-6">
             {!user && (
               <>
-                <Link href="/features" className="text-white font-medium hover:text-white">Features</Link>
-                <Link href="/solutions" className="text-white font-medium hover:text-white">Solutions</Link>
-                <Link href="/pricing" className="text-white font-medium hover:text-white">Pricing</Link>
-                <Link href="/about" className="text-white font-medium hover:text-white">About</Link>
+                <Link href="/features" className="text-white font-medium hover:text-white/80">Features</Link>
+                <Link href="/solutions" className="text-white font-medium hover:text-white/80">Solutions</Link>
+                <Link href="/pricing" className="text-white font-medium hover:text-white/80">Pricing</Link>
+                <Link href="/about" className="text-white font-medium hover:text-white/80">About</Link>
               </>
             )}
 
@@ -68,19 +79,20 @@ export default function Navbar() {
               <div className="relative">
                 <button
                   onClick={() => setDropdownOpen(!dropdownOpen)}
-                  className="flex items-center gap-3 px-4 py-2 rounded-xl hover:bg-gray-100 transition"
+                  className="flex items-center gap-3 px-4 py-2 rounded-xl hover:bg-white/10 transition"
                 >
-                  <div className="w-10 h-10 bg-[color:var(--color-primary)] rounded-full flex items-center justify-center text-white font-semibold shadow-md">
+                  <div className="w-10 h-10 bg-white text-[color:var(--color-primary)] rounded-full flex items-center justify-center font-semibold shadow-md">
                     {user.name?.charAt(0).toUpperCase() || "U"}
                   </div>
 
-                  <span className="font-medium text-gray-700">
+                  <span className="font-medium text-white">
                     {user.name || user.email}
                   </span>
 
                   <ChevronDown
-                    className={`w-4 h-4 text-gray-600 transition-transform ${dropdownOpen ? "rotate-180" : ""
-                      }`}
+                    className={`w-4 h-4 text-white transition-transform ${
+                      dropdownOpen ? "rotate-180" : ""
+                    }`}
                   />
                 </button>
 
@@ -157,7 +169,7 @@ export default function Navbar() {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMobileMenu(!mobileMenu)}
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition"
+            className="md:hidden p-2 rounded-lg hover:bg-white/20 transition"
           >
             {mobileMenu ? (
               <X className="w-7 h-7 text-white" />

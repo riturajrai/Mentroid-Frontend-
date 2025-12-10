@@ -9,19 +9,19 @@ export default function MentoroidMovement() {
       id: 1,
       number: 49980,
       label: "AI tutoring sessions delivered",
-      icon: <Brain className="w-6 h-6 text-[var(--color-primary)]" />,
+      icon: <Brain className="w-6 h-6 text-white" />,
     },
     {
       id: 2,
       number: 240,
       label: "Partnered schools & institutes",
-      icon: <Building2 className="w-6 h-6 text-[var(--color-primary)]" />,
+      icon: <Building2 className="w-6 h-6 text-white" />,
     },
     {
       id: 3,
       number: 60,
       label: "Students showed improvement",
-      icon: <TrendingUp className="w-6 h-6 text-[var(--color-primary)]" />,
+      icon: <TrendingUp className="w-6 h-6 text-white" />,
     },
   ];
 
@@ -55,11 +55,11 @@ export default function MentoroidMovement() {
       <div className="max-w-5xl mx-auto">
 
         {/* Title */}
-        <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
+        <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-white">
           A New Way of Learning for India — Coming Soon
         </h2>
 
-        <p className="text-lg md:text-xl font-bold text-[var(--color-primary)] mb-16">
+        <p className="text-lg md:text-xl font-bold text-white mb-16">
           Building India’s AI-Powered Learning Future — Launching January 2025.
         </p>
 
@@ -75,7 +75,7 @@ export default function MentoroidMovement() {
                 suffix={item.id === 1 ? "+" : item.id === 2 ? "+" : item.id === 3 ? "%" : ""}
               />
 
-              <div className="flex items-center gap-2 text-zinc-200 mt-2">
+              <div className="flex items-center gap-2 text-white mt-2">
                 {item.icon}
                 <p className="text-lg">{item.label}</p>
               </div>
@@ -84,11 +84,11 @@ export default function MentoroidMovement() {
         </div>
 
         {/* Language Info */}
-        <div className="flex flex-col items-center justify-center text-zinc-200">
+        <div className="flex flex-col items-center justify-center text-white">
           <div className="flex items-center gap-2 text-lg font-semibold mb-1">
-            <Globe2 className="w-6 h-6 text-[var(--color-primary)]" />
+            <Globe2 className="w-6 h-6 text-white" />
             <span>
-              2 Languages • <span className="text-white">English + Hindi</span>
+              2 Languages • <span className="text-white font-bold">English + Hindi</span>
             </span>
           </div>
           <p className="text-sm opacity-80">CBSE, ICSE & State Boards</p>
@@ -125,7 +125,7 @@ function AnimatedNumber({ target, isVisible, suffix = "" }) {
   }, [isVisible, target]);
 
   return (
-    <p className="text-5xl font-bold text-[var(--color-primary)]">
+    <p className="text-5xl font-bold text-white">
       {value.toLocaleString()}
       {suffix}
     </p>

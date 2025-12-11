@@ -24,7 +24,7 @@ export default function JoinLearningSection() {
             { icon: <BookOpenCheck />, text: "From Exam Stress → Smart Success!" },
           ].map((item, idx) => (
             <p key={idx} className="flex items-center justify-center gap-2 sm:gap-3">
-              {React.cloneElement(item.icon, { className: "w-4 h-4 sm:w-7 sm:h-7" })}
+              {React.cloneElement(item.icon, { className: "w-4 h-4 sm:w-7 sm:h-7 text-white" })}
               <span className="font-semibold">{item.text.split("→")[0]}</span> →{" "}
               <span className="font-semibold">{item.text.split("→")[1]}</span>
             </p>
@@ -44,10 +44,12 @@ export default function JoinLearningSection() {
             Education meets Intelligence. Empower your classroom, your students, your future.
           </p>
 
-          <Card className="p-6 md:p-8 bg-white/10 backdrop-blur-md border border-white/20 shadow-lg rounded-2xl flex flex-col md:flex-row items-center justify-center gap-4 sm:gap-7">
+          <Card className="p-6 md:p-8 bg-white/10 backdrop-blur-md border border-white/20 
+            shadow-lg rounded-2xl flex flex-col md:flex-row items-center justify-center gap-5 md:gap-7">
 
             {/* Start Learning Button */}
-            <Button className="flex items-center gap-2 bg-[#0A0E1A] hover:bg-zinc-900 text-white font-semibold py-2.5 sm:py-3 px-6 sm:px-8 w-full md:w-auto">
+            <Button className="flex items-center gap-2 bg-[#0A0E1A] hover:bg-zinc-900 
+              text-white font-semibold py-2.5 sm:py-3 px-6 sm:px-8 w-full md:w-auto rounded-xl">
               <Play className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-300" />
               Start Learning Free
             </Button>
@@ -56,16 +58,28 @@ export default function JoinLearningSection() {
             <Input
               type="text"
               placeholder="Enter your name"
-              className="w-full md:w-80 p-2.5 sm:p-3 rounded-2xl text-white placeholder-gray-400 focus:ring-2 focus:ring-white bg-white/10 backdrop-blur-sm border border-white/20"
+              className="
+                w-full md:w-72 
+                p-3 rounded-xl
+                bg-white/10 border border-white/20 
+                text-white placeholder-white/70
+                focus:ring-2 focus:ring-white
+              "
             />
 
             {/* Phone Input */}
             <div className="relative w-full md:w-60">
-              <Phone className="absolute left-3 top-3 w-4 h-4 sm:w-5 sm:h-5 text-gray-400" />
+              <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-white/70" />
+
               <Input
                 type="text"
                 placeholder="Phone number"
-                className="w-full pl-10 p-2.5 sm:p-3 rounded-2xl text-white placeholder-gray-400 focus:ring-2 focus:ring-white bg-white/10 backdrop-blur-sm border border-white/20"
+                className="
+                  w-full pl-12 p-3 rounded-xl
+                  bg-white/10 border border-white/20 
+                  text-white placeholder-white/70
+                  focus:ring-2 focus:ring-white
+                "
               />
             </div>
 

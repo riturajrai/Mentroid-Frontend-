@@ -5,26 +5,26 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Brain, HeartHandshake, Gamepad2 } from "lucide-react";
 
 export default function StakeholdersSection() {
-  const primary = "text-[#006188]";
+  const iconColor = "text-white";
 
   const features = [
     {
       id: 1,
       title: "Personalised Intelligence",
       desc: "Adaptive learning paths tailored to every student’s pace and style.",
-      icon: <Brain className={`w-12 h-12 ${primary}`} />,
+      icon: <Brain className={`w-12 h-12 ${iconColor}`} />,
     },
     {
       id: 2,
       title: "Human-Like Support",
       desc: "Meaningful feedback that guides students, not just scores them.",
-      icon: <HeartHandshake className={`w-12 h-12 ${primary}`} />,
+      icon: <HeartHandshake className={`w-12 h-12 ${iconColor}`} />,
     },
     {
       id: 3,
       title: "Motivation That Lasts",
       desc: "Gamified, bilingual, stress-free learning to keep learners engaged.",
-      icon: <Gamepad2 className={`w-12 h-12 ${primary}`} />,
+      icon: <Gamepad2 className={`w-12 h-12 ${iconColor}`} />,
     },
   ];
 
